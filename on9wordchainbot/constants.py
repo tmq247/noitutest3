@@ -21,7 +21,7 @@ WORD_ADDITION_CHANNEL_ID = config["WORD_ADDITION_CHANNEL_ID"]
 VIP = config["VIP"]
 VIP_GROUP = config["VIP_GROUP"]
 
-WORDLIST_SOURCE = "https://raw.githubusercontent.com/dwyl/english-words/master/words.txt"
+WORDLIST_SOURCE = "https://raw.githubusercontent.com/tmq247/noitutest/main/src/assets/tudien.txt"
 
 STAR = "\u2b50\ufe0f"
 
