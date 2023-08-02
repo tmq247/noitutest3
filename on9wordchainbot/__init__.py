@@ -34,7 +34,7 @@ bot = Bot(TOKEN, parse_mode=types.ParseMode.MARKDOWN, disable_web_page_preview=T
 on9bot = Bot(ON9BOT_TOKEN)
 dp = Dispatcher(bot)
 session = aiohttp.ClientSession()
-pool: asyncpg.pool.Pool
+pool: pymongo.pool.Pool
 
 
 class GlobalState:
