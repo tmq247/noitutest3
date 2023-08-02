@@ -48,7 +48,7 @@ class GlobalState:
 async def init() -> None:
     global pool
     logger.info("Connecting to database")
-    pool = await asyncpg.create_pool(DB_URI, loop=loop)
+    pool = await mongodb.create_pool(DB_URI, loop=loop)
 
 
 loop.run_until_complete(init())
