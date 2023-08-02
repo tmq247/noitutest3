@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from aiocache import cached
 from aiogram import types
 from aiogram.utils.markdown import quote_html
-from pymongo import Record
+from asyncpg import Record
 from matplotlib.dates import DateFormatter
 from matplotlib.ticker import MaxNLocator
 
