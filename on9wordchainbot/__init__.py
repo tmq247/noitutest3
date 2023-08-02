@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import Dict, TYPE_CHECKING
 
 import aiohttp
-import mongodb
+import pymongo
 from aiogram import Bot, Dispatcher, types
 
 from .constants import DB_URI, ON9BOT_TOKEN, TOKEN
@@ -48,7 +48,7 @@ class GlobalState:
 async def init() -> None:
     global pool
     logger.info("Connecting to database")
-    pool = await mongodb.create_pool(DB_URI, loop=loop)
+    pool = await pymongo.create_pool(DB_URI, loop=loop)
 
 
 loop.run_until_complete(init())
