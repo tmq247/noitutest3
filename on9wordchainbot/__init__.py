@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import Dict, TYPE_CHECKING
 
 import aiohttp
-import asyncpg
+import mongodb
 from aiogram import Bot, Dispatcher, types
 
 from .constants import DB_URI, ON9BOT_TOKEN, TOKEN
