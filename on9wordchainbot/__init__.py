@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import Dict, TYPE_CHECKING
 
 import aiohttp
-import pymongo
+import asyncpg
 from aiogram import Bot, Dispatcher, types
 
 from .constants import DB_URI, ON9BOT_TOKEN, TOKEN
@@ -34,7 +34,7 @@ bot = Bot(TOKEN, parse_mode=types.ParseMode.MARKDOWN, disable_web_page_preview=T
 on9bot = Bot(ON9BOT_TOKEN)
 dp = Dispatcher(bot)
 session = aiohttp.ClientSession()
-pool: pymongo.pool.Pool
+pool: asyncpg.pool.Pool
 
 
 class GlobalState:
@@ -48,7 +48,7 @@ class GlobalState:
 async def init() -> None:
     global pool
     logger.info("Connecting to database")
-    pool = await pymongo.create_pool(DB_URI, loop=loop)
+    pool = await asyncpg.create_pool(DB_URI, loop=loop)
 
 
 loop.run_until_complete(init())
